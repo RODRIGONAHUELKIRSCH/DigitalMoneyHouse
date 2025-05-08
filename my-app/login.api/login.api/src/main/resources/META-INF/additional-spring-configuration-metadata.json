@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "keycloak.client-id",
+    "type": "java.lang.String",
+    "description": "A description for 'keycloak.client-id'"
+  },
+  {
+    "name": "keycloak.server-url",
+    "type": "java.lang.String",
+    "description": "A description for 'keycloak.server-url'"
+  },
+  {
+    "name": "keycloak.admin-password",
+    "type": "java.lang.String",
+    "description": "A description for 'keycloak.admin-password'"
+  },
+  {
+    "name": "keycloak.admin-user",
+    "type": "java.lang.String",
+    "description": "A description for 'keycloak.admin-user'"
+  },
+  {
+    "name": "keycloak.realmName",
+    "type": "java.lang.String",
+    "description": "A description for 'keycloak.realmName'"
+  }
+]}

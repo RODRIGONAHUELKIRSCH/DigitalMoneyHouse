@@ -1,0 +1,69 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayApplication<gateway.api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "DigitalMoneyHouse.gateway.api.GatewayApplication",
+            "projectName": "gateway.api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=61954 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=gateway.api"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<api.config>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "api.config.api.config.Application",
+            "projectName": "api.config",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=63723 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=api.config"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServerApplication<eureka.server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "eureka.server.eureka.server.EurekaServerApplication",
+            "projectName": "eureka.server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=61894 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=eureka.server"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<user.api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "user.api.user.api.Application",
+            "projectName": "user.api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52645 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=user.api"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<register.api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "register.api.Application",
+            "projectName": "register.api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=57017 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=register.api"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<login.api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "login.api.login.api.Application",
+            "projectName": "login.api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
