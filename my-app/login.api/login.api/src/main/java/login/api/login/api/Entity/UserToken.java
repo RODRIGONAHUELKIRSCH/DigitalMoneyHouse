@@ -2,6 +2,7 @@ package login.api.login.api.Entity;
 
 import java.util.Date;
 import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -29,7 +30,7 @@ public class UserToken {
     @Column(name = "token", nullable = false, length = 2048)
     private String token;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_creacion = new Date();
 

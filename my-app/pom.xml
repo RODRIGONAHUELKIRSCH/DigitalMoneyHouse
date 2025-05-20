@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.4</version>
+		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
   <groupId>com.mycompany.app</groupId>
@@ -21,11 +21,12 @@
     <module>user.api/user.api</module>
     <module>register.api/register.api</module>
     <module>login.api/login.api</module>
+    <module>logout.api/logout.api</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 
   <dependencies>
@@ -60,7 +61,7 @@
 <plugin>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-maven-plugin</artifactId>
-    <version>3.4.4</version>
+    <version>3.4.5</version>
 </plugin>
       </plugins>
     </pluginManagement>

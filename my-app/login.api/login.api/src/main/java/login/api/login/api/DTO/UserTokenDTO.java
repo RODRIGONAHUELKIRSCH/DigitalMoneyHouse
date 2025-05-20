@@ -10,10 +10,19 @@ public class UserTokenDTO {
         this.token=token;
         this.userid=userid;
     }
+
+    public UserTokenDTO(String token, String userid,String fechacreacion){
+        this.token=token;
+        this.userid=userid;
+        this.updateddate=fechacreacion;
+    }
+    
     
     private String token;
 
     private String userid;
+    
+    private String updateddate;
 
     public String getToken() {
         return token;
@@ -30,5 +39,14 @@ public class UserTokenDTO {
     public void setUserid(String userid) {
         this.userid = userid;
     }
+
+    public String getUpdateddate() {
+        return updateddate;
+    }
+
+    public void setUpdateddate(String updateddate) {
+        this.updateddate = updateddate;
+    }
+
 
 }

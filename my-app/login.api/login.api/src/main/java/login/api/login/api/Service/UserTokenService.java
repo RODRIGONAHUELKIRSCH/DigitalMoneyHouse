@@ -1,8 +1,8 @@
 package login.api.login.api.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +23,20 @@ public class UserTokenService {
 
     @Transactional
     public UserTokenDTO saveUser(UserTokenDTO dtoUser) {
-        UserToken user = umapp.DTOtoUserToken(dtoUser);
+  Optional<UserToken> optionalToken = urep.findByUserId(dtoUser.getUserid());
 
-        urep.save(user);
-        return umapp.UserTokentoDTO(user);
+    UserToken userToken;
+    if (optionalToken.isPresent()) {
+        userToken = optionalToken.get();
+        userToken.setToken(dtoUser.getToken());
+
+    } else {
+        userToken = umapp.DTOtoUserToken(dtoUser);
+
+    }
+
+    urep.save(userToken); // Guarda o actualiza
+    return umapp.UserTokentoDTO(userToken);
     }
 
     @Transactional
@@ -37,14 +47,18 @@ public class UserTokenService {
                 .collect(Collectors.toList());
     }
 
-
-
     @Transactional
     public void DeleteUser(String id){
 
         urep.deleteById(id);
     }
+        public Optional<String> getUserIdByToken(String token) {
+        return urep.findByToken(token)
+                .map(UserToken::getUserId);
+    }
 
-
+    public void deleteToken(String token) {
+        urep.deleteByToken(token);
+    }
     
 }
