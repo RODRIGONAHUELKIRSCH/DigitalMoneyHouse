@@ -64,6 +64,16 @@
             "projectName": "login.api",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<logout.api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "logout.api.logout.api.Application",
+            "projectName": "logout.api",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

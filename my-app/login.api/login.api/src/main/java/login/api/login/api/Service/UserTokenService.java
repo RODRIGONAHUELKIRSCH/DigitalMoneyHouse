@@ -57,6 +57,7 @@ public class UserTokenService {
                 .map(UserToken::getUserId);
     }
 
+    @Transactional
     public void deleteToken(String token) {
         urep.deleteByToken(token);
     }

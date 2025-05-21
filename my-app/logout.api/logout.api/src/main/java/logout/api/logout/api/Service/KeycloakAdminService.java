@@ -12,21 +12,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
+
+import jakarta.transaction.Transactional;
 @Service
 public class KeycloakAdminService {
 
     @Value("${keycloak.admin-url}")
     private String keycloakUrl;
 
-    @Value("${keycloak.realm}")
+    @Value("${keycloak.realmName}")
     private String realm;
 
     @Value("${keycloak.client-id}")
     private String clientId;
 
-    @Value("${keycloak.client-secret}")
-    private String clientSecret;
-
+    @Transactional
     public void revokeSessions(String userId) {
         String accessToken = getAdminAccessToken();
 
@@ -41,14 +41,13 @@ public class KeycloakAdminService {
     }
 
     private String getAdminAccessToken() {
-        String tokenUrl = keycloakUrl + "/realms/master/protocol/openid-connect/token";
+        String tokenUrl = keycloakUrl + "/realms/" + realm + "/protocol/openid-connect/token";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
         MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
         body.add("client_id", clientId);
-        body.add("client_secret", clientSecret);
         body.add("grant_type", "client_credentials");
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(body, headers);

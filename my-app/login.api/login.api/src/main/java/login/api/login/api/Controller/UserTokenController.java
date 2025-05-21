@@ -50,7 +50,7 @@ public class UserTokenController {
         }
     }
 
-        @GetMapping("/get-userid")
+        @GetMapping("/getuserid")
     public ResponseEntity<String> getUserIdByToken(@RequestParam String token) {
         return userTokenService.getUserIdByToken(token)
                 .map(ResponseEntity::ok)

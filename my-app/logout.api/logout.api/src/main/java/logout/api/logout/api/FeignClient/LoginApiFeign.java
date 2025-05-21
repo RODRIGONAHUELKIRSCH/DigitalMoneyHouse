@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "GATEWAY.API", url = "http://localhost:8082")
 public interface LoginApiFeign {
 
-    @GetMapping("/api/get-userid")
+    @GetMapping("/api/getuserid")
     ResponseEntity<String> getUserIdByToken(@RequestParam("token") String token);
 
     @DeleteMapping("/api/delete")

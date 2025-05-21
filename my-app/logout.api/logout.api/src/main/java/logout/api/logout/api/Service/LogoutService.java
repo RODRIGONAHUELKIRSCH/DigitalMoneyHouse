@@ -1,19 +1,21 @@
 package logout.api.logout.api.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
 import logout.api.logout.api.FeignClient.LoginApiFeign;
 
+@Service
 public class LogoutService {
-    
-    private final LoginApiFeign feignClient;
-    private final KeycloakAdminService keycloakAdminService;
+    @Autowired
+    private  LoginApiFeign feignClient;
+    @Autowired
+    private  KeycloakAdminService keycloakAdminService;
 
-    public LogoutService(LoginApiFeign feignClient, KeycloakAdminService keycloakAdminService) {
-        this.feignClient = feignClient;
-        this.keycloakAdminService = keycloakAdminService;
-    }
-
+  
+    @Transactional
     public void processLogout(String token) {
         // Paso 1: obtener el userId desde login.api
         ResponseEntity<String> response = feignClient.getUserIdByToken(token);
